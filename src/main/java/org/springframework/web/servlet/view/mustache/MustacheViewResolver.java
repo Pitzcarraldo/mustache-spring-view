@@ -15,6 +15,7 @@
  */
 package org.springframework.web.servlet.view.mustache;
 
+import com.github.mustachejava.MustacheException;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.web.servlet.ViewResolver;
@@ -59,13 +60,14 @@ public class MustacheViewResolver extends AbstractTemplateViewResolver
 
     @Override
     protected AbstractUrlBasedView buildView(String viewName) throws Exception {
-
         final MustacheView view = (MustacheView) super.buildView(viewName);
-
-        Mustache template = templateLoader.compile(view.getUrl());
-        view.setTemplate(template);
-
-        return view;
+        try {
+            Mustache template = templateLoader.compile(view.getUrl());
+            view.setTemplate(template);
+            return view;
+        } catch (MustacheException e) {
+	        throw new MustacheException(view.getUrl() + " : " + e.getMessage());
+        }
     }
 
     /**
