@@ -64,11 +64,20 @@ WEB-INF/views/parent.html
         <body>
             <h1>Hello world!</h1>
             <h2>{{ token }}</h2>
-            
+            <!-- Inheritance Support -->
+            {{$content}} Default Content {{/content}}
             <!-- Partial Support -->
             {{> footer }}
         </body>
     </html>
+    
+WEB-INF/views/content.html
+
+    {{<partent}}
+        {{$content}}
+            Body Content
+        {{/content}}
+    {{/parent}}
 
 WEB-INF/views/footer.html
     
