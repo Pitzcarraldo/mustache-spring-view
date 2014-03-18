@@ -48,10 +48,10 @@ public class MustacheTemplateLoaderTest {
 
 	private Mockery context = new Mockery();
 
-	private static final String TEST_TEMPLATES_PATH = "WEB-INF\\views\\";
+	private static final String TEST_TEMPLATES_PATH = "WEB-INF/views/";
 	private static final String TEST_TEMPLATE = "test-template.html";
 	private static final String PARENT_TEMPLATE = "test-parent.html";
-	private static final String PARTIAL_TEMPLATE = "partial\\test-partial.html";
+	private static final String PARTIAL_TEMPLATE = "partial/test-partial.html";
 	private static final String UTF8_TEMPLATE = "test-cjk.html";
 	private static final String INHERITANCE_TEMPLATE = "test-inheritance.html";
 	private static final String CONTENT_TEMPLATE = "test-content.html";

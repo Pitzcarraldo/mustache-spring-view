@@ -36,7 +36,7 @@ import com.github.mustachejava.MustacheException;
  * @author Sean Scanlon <sean.scanlon@gmail.com>
  * @author Eric D. White <eric@ericwhite.ca>
  */
-public class MustacheTemplateLoader extends DefaultMustacheFactory implements
+public class MustacheTemplateLoader extends NoneCacheMustacheFactory implements
         ResourceLoaderAware {
 
     private ResourceLoader resourceLoader;

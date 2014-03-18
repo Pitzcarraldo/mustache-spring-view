@@ -16,7 +16,7 @@
 package org.springframework.web.servlet.i18n;
 
 import com.google.common.base.Function;
-import com.sun.istack.internal.Nullable;
+import javax.annotation.Nullable;
 import org.springframework.context.MessageSource;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.ModelAndView;
