@@ -32,13 +32,15 @@ import com.github.mustachejava.Mustache;
  */
 @RunWith(JMock.class)
 public class MustacheViewResolverTest {
-	
-	private Mockery context = new Mockery(){{
-		setImposteriser(ClassImposteriser.INSTANCE);
-	}};
-	
+
+	private Mockery context = new Mockery() {
+		{
+			setImposteriser(ClassImposteriser.INSTANCE);
+		}
+	};
+
 	private final Mustache mustache = context.mock(Mustache.class);
-	
+
 	/**
 	 * A basic test where no prefix is used.
 	 */
@@ -47,11 +49,14 @@ public class MustacheViewResolverTest {
 		final String viewPath = "top-level.mustache";
 		final MustacheTemplateLoader templateLoader = context.mock(MustacheTemplateLoader.class);
 
-		context.checking(new Expectations(){{
-			oneOf(templateLoader).setPrefix(with(any(String.class)));
-			oneOf(templateLoader).compile(viewPath);will(returnValue(mustache));
-		}});
-		
+		context.checking(new Expectations() {
+			{
+				oneOf(templateLoader).setPrefix(with(any(String.class)));
+				oneOf(templateLoader).compile(viewPath);
+				will(returnValue(mustache));
+			}
+		});
+
 		MustacheViewResolver r = new MustacheViewResolver();
 		r.setTemplateLoader(templateLoader);
 		r.afterPropertiesSet();
@@ -59,7 +64,7 @@ public class MustacheViewResolverTest {
 		AbstractUrlBasedView view = r.buildView(viewPath);
 		assertNotNull(view);
 	}
-	
+
 	/**
 	 * Ensure the prefix is passed on to the template loader
 	 * and that the template loader is called with a fully 
@@ -69,13 +74,16 @@ public class MustacheViewResolverTest {
 	public void resolvesViewWithPrefix() throws Exception {
 		final String viewPath = "WEB-INF/views/";
 		final String viewName = "hello.mustache";
-		
+
 		final MustacheTemplateLoader templateLoader = context.mock(MustacheTemplateLoader.class);
 
-		context.checking(new Expectations(){{
-			oneOf(templateLoader).setPrefix(with(any(String.class)));
-			oneOf(templateLoader).compile(viewPath + viewName);will(returnValue(mustache));
-		}});
+		context.checking(new Expectations() {
+			{
+				oneOf(templateLoader).setPrefix(with(any(String.class)));
+				oneOf(templateLoader).compile(viewPath + viewName);
+				will(returnValue(mustache));
+			}
+		});
 
 		MustacheViewResolver r = new MustacheViewResolver();
 		r.setTemplateLoader(templateLoader);

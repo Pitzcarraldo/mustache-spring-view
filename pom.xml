@@ -6,13 +6,13 @@
         <artifactId>oss-parent</artifactId>
         <version>7</version>
     </parent>
-    <groupId>com.github.ericdwhite</groupId>
+    <groupId>com.github.pitzcarraldo</groupId>
     <artifactId>mustache.java-spring-webmvc</artifactId>
     <packaging>jar</packaging>
     <version>0.9.3-SNAPSHOT</version>
     <name>mustache.java spring-webmvc view resolver</name>
     <description>A spring view for the mustache.java templating language https://github.com/spullara/mustache.java</description>
-    <url>https://github.com/ericdwhite/mustache.java-spring-webmvc</url>
+    <url>https://github.com/pitzcarraldo/mustache.java-spring-webmvc</url>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -21,9 +21,9 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/ericdwhite/mustache.java-spring-webmvc</url>
-        <connection>scm:git:https://ericdwhite@github.com/ericdwhite/mustache.java-spring-webmvc.git</connection>
-        <developerConnection>scm:git:git@github.com:ericdwhite/mustache.java-spring-webmvc.git</developerConnection>
+        <url>https://github.com/pitzcarraldo/mustache.java-spring-webmvc</url>
+        <connection>scm:git:https://pitzcarraldo@github.com/pitzcarraldo/mustache.java-spring-webmvc.git</connection>
+        <developerConnection>scm:git:git@github.com:pitzcarraldo/mustache.java-spring-webmvc.git</developerConnection>
     </scm>
     <developers>
         <!-- As Eric modified all the classes I don't want Sean to take any public 
@@ -35,16 +35,28 @@
                  <name>Sean Scanlon</name> 
                  <email>sean.scanlon@gmail.com</email>
              </developer>
+
+
+             <developer>
+                 <id>ericdwhite</id>
+                 <name>Eric D. White</name>
+                 <email>eric@ericwhite.ca</email>
+            </developer>
+
+            Pitzcarraldo only just updated mustache.java dependency.
+            And added some test case for inheritance for private needs.
+            Modify pom.xml for register into Maven Repository.
         -->
+        
         <developer>
-            <id>ericdwhite</id>
-            <name>Eric D. White</name>
-            <email>eric@ericwhite.ca</email>
+            <id>pitzcarraldo</id>
+            <name>Minkyu Cho</name>
+            <email>mrnoname@naver.com</email>
         </developer>
     </developers>
     <properties>
         <jdk.version>1.6</jdk.version>
-        <mustache.java.version>0.7.2</mustache.java.version>
+        <mustache.java.version>0.8.14</mustache.java.version>
         <org.springframework.version>3.1.0.RELEASE</org.springframework.version>
         <google.guava.version>11.0.2</google.guava.version>
 

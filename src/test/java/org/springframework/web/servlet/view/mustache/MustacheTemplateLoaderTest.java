@@ -15,16 +15,8 @@
  */
 package org.springframework.web.servlet.view.mustache;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.notNullValue;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
-
+import com.github.mustachejava.Mustache;
+import com.github.mustachejava.MustacheException;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.jmock.integration.junit4.JMock;
@@ -35,8 +27,15 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 
-import com.github.mustachejava.Mustache;
-import com.github.mustachejava.MustacheException;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
 
 /**
  * Verify both positive and negative cases around loading templates. The most
@@ -49,16 +48,20 @@ public class MustacheTemplateLoaderTest {
 
 	private Mockery context = new Mockery();
 
-	private static final String TEST_TEMPLATES_PATH = "WEB-INF/views/";
+	private static final String TEST_TEMPLATES_PATH = "WEB-INF\\views\\";
 	private static final String TEST_TEMPLATE = "test-template.html";
 	private static final String PARENT_TEMPLATE = "test-parent.html";
-	private static final String PARTIAL_TEMPLATE = "test-partial.html";
+	private static final String PARTIAL_TEMPLATE = "partial\\test-partial.html";
 	private static final String UTF8_TEMPLATE = "test-cjk.html";
+	private static final String INHERITANCE_TEMPLATE = "test-inheritance.html";
+	private static final String CONTENT_TEMPLATE = "test-content.html";
 
 	private static final ClassPathResource test = new ClassPathResource(TEST_TEMPLATES_PATH.concat(TEST_TEMPLATE));
 	private static final ClassPathResource parent = new ClassPathResource(TEST_TEMPLATES_PATH.concat(PARENT_TEMPLATE));
 	private static final ClassPathResource partial = new ClassPathResource(TEST_TEMPLATES_PATH.concat(PARTIAL_TEMPLATE));
 	private static final ClassPathResource utf8 = new ClassPathResource(TEST_TEMPLATES_PATH.concat(UTF8_TEMPLATE));
+	private static final ClassPathResource inheritance = new ClassPathResource(TEST_TEMPLATES_PATH.concat(INHERITANCE_TEMPLATE));
+	private static final ClassPathResource content = new ClassPathResource(TEST_TEMPLATES_PATH.concat(CONTENT_TEMPLATE));
 
 	private ResourceLoader resourceLoader;
 	private MustacheTemplateLoader templateLoader;
@@ -108,6 +111,25 @@ public class MustacheTemplateLoaderTest {
 		// Spring will prefix the parent template automatically but not include
 		// partials
 		Mustache template = templateLoader.compile(pathFor(PARENT_TEMPLATE));
+		assertThat(template, notNullValue());
+	}
+
+	@Test
+	public void loadsATemplateInheritanceContainingAPartial() {
+		context.checking(new Expectations() {
+			{
+				oneOf(resourceLoader).getResource(pathFor(INHERITANCE_TEMPLATE));
+				will(returnValue(inheritance));
+
+				oneOf(resourceLoader).getResource(pathFor(CONTENT_TEMPLATE));
+				will(returnValue(content));
+
+				oneOf(resourceLoader).getResource(pathFor(PARTIAL_TEMPLATE));
+				will(returnValue(partial));
+			}
+		});
+
+		Mustache template = templateLoader.compile(pathFor(CONTENT_TEMPLATE));
 		assertThat(template, notNullValue());
 	}
 

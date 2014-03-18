@@ -4,3 +4,5 @@
 .springBeans
 target/
 *.swp
+.idea
+*.iml
