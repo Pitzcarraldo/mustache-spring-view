@@ -8,6 +8,9 @@ This is a version of [mustache-spring-view](https://github.com/sps/mustache-spri
 Big thanks to sps (Sean Scanlon) for mustache-spring-view, which supports
 jmustache.  This code base is derived from mustache-spring-view.
 
+This Project Only just updated mustache.java dependency from [mustache.java-spring-webmvc](https://github.com/ericdwhite/mustache.java-spring-webmvc)
+And added some test case for inheritance for private needs.
+
 Getting Started
 -----------------
 See: http://blog.springsource.com/2011/01/04/green-beans-getting-started-with-spring-mvc/
@@ -21,7 +24,7 @@ Maven dependency
     <dependencies>
         ...
         <dependency>
-            <groupId>com.github.ericdwhite</groupId>
+            <groupId>com.github.pitzcarraldo</groupId>
 	        <artifactId>mustache.java-spring-webmvc</artifactId>
             <version>0.9.3-SNAPSHOT</version>
         </dependency>
