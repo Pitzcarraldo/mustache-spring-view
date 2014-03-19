@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
+import com.github.mustachejava.Mustache;
+import com.google.common.util.concurrent.UncheckedExecutionException;
 import org.springframework.context.ResourceLoaderAware;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
@@ -35,8 +37,9 @@ import com.github.mustachejava.MustacheException;
  * 
  * @author Sean Scanlon <sean.scanlon@gmail.com>
  * @author Eric D. White <eric@ericwhite.ca>
+ * @author Minkyu Cho <mrnoname@naver.com>
  */
-public class MustacheTemplateLoader extends NoneCacheMustacheFactory implements
+public class MustacheTemplateLoader extends DefaultMustacheFactory implements
         ResourceLoaderAware {
 
     private ResourceLoader resourceLoader;
@@ -95,5 +98,33 @@ public class MustacheTemplateLoader extends NoneCacheMustacheFactory implements
             return resourceName;
         }
         return this.prefix + resourceName;
+    }
+
+    /**
+     * DefaultMustacheFactory is using Guava Loading Cache default.
+     * Spring view resolver support cache option too.
+     * So exclude cache for check change of view template when development.
+     * You can use cache option for view resolver as cache property.
+     *
+     * @param name
+     * @return compiled Mustache.
+     */
+    @Override
+    public Mustache compile(String name) {
+        try {
+            Mustache mustache = mc.compile(name);
+            mustache.init();
+            return mustache;
+        } catch (UncheckedExecutionException e) {
+            throw handle(e);
+        }
+    }
+
+    private MustacheException handle(Exception e) {
+        Throwable cause = e.getCause();
+        if (cause instanceof MustacheException) {
+            return (MustacheException) cause;
+        }
+        return new MustacheException(cause);
     }
 }
