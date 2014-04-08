@@ -57,7 +57,7 @@ Spring configuration
         </property>
     </bean>
     
-Example
+Inheritance Example
 -------------
 WEB-INF/views/parent.html
 
