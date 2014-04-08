@@ -1,16 +1,20 @@
+Change Point from Eric's Project
+-----------------
+- Updated mustache.java dependency from [mustache.java-spring-webmvc](https://github.com/ericdwhite/mustache.java-spring-webmvc),
+for support to inheritance template spec.
+
+- Template inheritance is supported by this implementation, see <https://github.com/mustache/spec/issues/38> (eg. `{{<super}}{{$content}}...{{/content}}{{/super}}`)
+
+- And added some test case for inheritance for private needs.
+
 [mustache.java](https://github.com/spullara/mustache.java) view for [spring3](http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/mvc.html)
 ---------------------------
-What is mustache: [mustache.js](http://mustache.github.com/mustache.5.html)
+- What is mustache: [mustache.js](http://mustache.github.com/mustache.5.html)
 
-This is a version of [mustache-spring-view](https://github.com/sps/mustache-spring-view) that
+- This is a version of [mustache-spring-view](https://github.com/sps/mustache-spring-view) that
  works with [mustache.java](https://github.com/spullara/mustache.java).
 
-Big thanks to sps (Sean Scanlon) for mustache-spring-view, which supports
-jmustache.  This code base is derived from mustache-spring-view.
-
-This Project Only just updated mustache.java dependency from [mustache.java-spring-webmvc](https://github.com/ericdwhite/mustache.java-spring-webmvc).
-
-And added some test case for inheritance for private needs.
+- Big thanks to sps (Sean Scanlon) for mustache-spring-view, which supports jmustache. This code base is derived from mustache-spring-view.
 
 Getting Started
 -----------------
@@ -25,21 +29,21 @@ Maven dependency
     <dependencies>
         ...
         <dependency>
-            <groupId>com.github.pitzcarraldo</groupId>
-	        <artifactId>mustache.java-spring-webmvc</artifactId>
-            <version>0.9.3-SNAPSHOT</version>
+            <groupId>com.github.pitzcarraldo.mustache</groupId>
+            <artifactId>spring-view</artifactId>
+            <version>0.9.4-SNAPSHOT</version>
         </dependency>
         ...
     </dependencies>
     
     <repositories>
     	...
-  		<repository>
+  	<repository>
     		<id>Sonatype Snapshots</id>
     		<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-  		</repository>
-  		...
-	</repositories>
+  	</repository>
+  	...
+    </repositories>
 
 Spring configuration
 -------------
