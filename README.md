@@ -4,11 +4,9 @@
 Change Point from Eric's Project
 -----------------
 - Updated mustache.java dependency from [mustache.java-spring-webmvc](https://github.com/ericdwhite/mustache.java-spring-webmvc),
-for support to inheritance template spec.
+for support to inheritance template spec, and added some test case for inheritance.
 
 - Template inheritance is supported by this implementation, see <https://github.com/mustache/spec/issues/38> (eg. `{{<super}}{{$content}}...{{/content}}{{/super}}`)
-
-- And added some test case for inheritance for private needs.
 
 [mustache.java](https://github.com/spullara/mustache.java) view for [spring3](http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/mvc.html)
 ---------------------------
