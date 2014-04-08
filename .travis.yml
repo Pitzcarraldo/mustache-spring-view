@@ -9,8 +9,8 @@ jdk:
   - oraclejdk7
 
 env:
-global:
-  - secure: "LC9g/W2heZLtzkX3jzAzvMIOcs/ACz9Hh6PYjGYtl+r/u9ytejC8MBV41I5qs2C+IXpY8FJlxwyg2jxka4ERLcYGr9VrvNoYxBi7klbN58CHdMVMzFBtuKMDUxpFhQDpPiJXrkvU64GJ/TYSbue4n3MwxG0unQKcYlO9ikZBdKw="
+  global:
+    - secure: "LC9g/W2heZLtzkX3jzAzvMIOcs/ACz9Hh6PYjGYtl+r/u9ytejC8MBV41I5qs2C+IXpY8FJlxwyg2jxka4ERLcYGr9VrvNoYxBi7klbN58CHdMVMzFBtuKMDUxpFhQDpPiJXrkvU64GJ/TYSbue4n3MwxG0unQKcYlO9ikZBdKw="
 
 notifications:
   # See http://about.travis-ci.org/docs/user/build-configuration/ to learn more
