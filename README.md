@@ -1,10 +1,9 @@
 [![Build Status](https://travis-ci.org/Pitzcarraldo/mustache-spring-view.svg?branch=master)](https://travis-ci.org/Pitzcarraldo/mustache-spring-view)
 [![Coverage Status](https://coveralls.io/repos/Pitzcarraldo/mustache-spring-view/badge.png?branch=master)](https://coveralls.io/r/Pitzcarraldo/mustache-spring-view?branch=master)
 
-Change Point from Eric's Project
+Change Point from [mustache.java-spring-webmvc](https://github.com/ericdwhite/mustache.java-spring-webmvc)
 -----------------
-- Updated mustache.java dependency from [mustache.java-spring-webmvc](https://github.com/ericdwhite/mustache.java-spring-webmvc),
-for support to inheritance template spec, and added some test case for inheritance.
+- Updated dependency of mustache.java for support to inheritance template spec, and added some test case for inheritance.
 
 - Template inheritance is supported by this implementation, see <https://github.com/mustache/spec/issues/38> (eg. `{{<super}}{{$content}}...{{/content}}{{/super}}`)
 
