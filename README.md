@@ -5,8 +5,6 @@ Change Point from [mustache.java-spring-webmvc](https://github.com/ericdwhite/mu
 -----------------
 - Updated dependency of mustache.java for support to inheritance template spec, and added some test case for inheritance.
 - Template inheritance is supported by this implementation, see <https://github.com/mustache/spec/issues/38> (eg. `{{<super}}{{$content}}...{{/content}}{{/super}}`)
-- [Sample Project](https://github.com/Pitzcarraldo/spring-mustache-hogan-example/)
-
 
 [mustache.java](https://github.com/spullara/mustache.java) view for [spring3](http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/mvc.html)
 ---------------------------
@@ -102,6 +100,10 @@ A Controller
     		return "parent";
     	}
     }
+    
+Sample Project Integrated with [Hogan.js](https://github.com/twitter/hogan.js)
+------------
+[spring-mustache-hogan-example](https://github.com/Pitzcarraldo/spring-mustache-hogan-example/)
 
 
 Mustache and Localization
