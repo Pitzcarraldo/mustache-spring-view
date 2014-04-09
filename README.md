@@ -77,7 +77,7 @@ WEB-INF/views/parent.html
     
 WEB-INF/views/content.html
 
-    {{<partent}}
+    {{<parent}}
         {{$content}}
             Body Content
         {{/content}}
