@@ -24,7 +24,6 @@ And the following sections
 Maven dependency
 -----------------
 
-
     <dependencies>
         ...
         <dependency>
