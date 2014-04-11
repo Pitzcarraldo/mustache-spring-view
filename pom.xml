@@ -22,9 +22,9 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/pitzcarraldo/mustache.java-spring-webmvc</url>
-        <connection>scm:git:https://pitzcarraldo@github.com/pitzcarraldo/mustache.java-spring-webmvc.git</connection>
-        <developerConnection>scm:git:git@github.com:pitzcarraldo/mustache.java-spring-webmvc.git</developerConnection>
+        <url>https://github.com/pitzcarraldo/mustache-spring-view</url>
+        <connection>scm:git:https://pitzcarraldo@github.com/pitzcarraldo/mustache-spring-view.git</connection>
+        <developerConnection>scm:git:git@github.com:pitzcarraldo/mustache-spring-view.git</developerConnection>
     </scm>
     <developers>
         <!-- As Eric modified all the classes I don't want Sean to take any public 
