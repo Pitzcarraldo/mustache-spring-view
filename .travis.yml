@@ -10,7 +10,7 @@ jdk:
 
 env:
   global:
-    - secure: "SOvackQnVqleOnlj3ZerEK/FZUKhK9bqpH7+JD8zQ+BXysfnsKbRcu9mTJ2lr9dExZYkoQ94sRUmD8vOvGARMUeHEu5gqrwNc3GmSnq6HzeF0rTkBU16aY775TYVkd8TiiAaGz17/LqWv74Ugb4lfOQXGjV69xGO1PanM6EW2R0="
+    - secure: "WCo8544ObxLhUAvgNHScfvJkaCOHuyL8XThkIe9z7WmLcheSi5UBGbrEVo/2lOg4uwXND/Fe37g5MlBFDabhO0ta/BPG9pCuiSdL3W/LzvAt/5jx4AMIigiPvuiTKi/jptaGd7iGLOC02xs4NYL3BwseTc+bxTU0FP7sXStH+0c="
 
 notifications:
   # See http://about.travis-ci.org/docs/user/build-configuration/ to learn more
